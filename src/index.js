@@ -34,6 +34,7 @@ Walker.prototype._read = function () {
 
     self.fs.readdir(pathItem, function (err, pathItems) {
       if (err) {
+        self.push(item)
         return self.emit('error', err, item)
       }
 
